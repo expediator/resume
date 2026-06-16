@@ -136,10 +136,11 @@ body::after{width:520px;height:520px;background:#7b5cff2e;bottom:-140px;right:-1
 .start-btn{background:none;border:none;color:var(--text);font-size:14px;font-family:'Poppins',sans-serif;font-weight:600;padding:0 14px;height:100%;cursor:pointer;border-radius:4px;}
 .start-btn:hover{background:#ffffff14;}
 .taskbar-icons{display:flex;gap:2px;margin-left:6px;}
-.taskbar-icons button{
+.taskbar-icons button,.taskbar-icons a.taskbar-link{
   background:none;border:none;font-size:18px;height:40px;width:40px;border-radius:4px;cursor:pointer;color:var(--text);
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
 }
-.taskbar-icons button:hover,.taskbar-icons button.active{background:#ffffff1a;}
+.taskbar-icons button:hover,.taskbar-icons button.active,.taskbar-icons a.taskbar-link:hover{background:#ffffff1a;}
 .taskbar-icons button.active{border-bottom:2px solid var(--accent);}
 .tray{margin-left:auto;display:flex;align-items:center;gap:14px;padding-right:10px;}
 .music-player{display:flex;align-items:center;gap:8px;background:#ffffff0d;border-radius:6px;padding:4px 10px;}
