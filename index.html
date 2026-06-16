@@ -19,10 +19,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Poppins:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
+<!-- # SECTION: WALLPAPER & VISIT COUNTER -->
 <div class="wallpaper" id="wallpaper"></div>
 <div class="visit-counter" title="Total visits">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=expediator.resume&style=flat-square&color=3b9eff&left_text=visits" alt="Visit count">
@@ -37,7 +38,7 @@
 
 <div class="desktop" id="desktop">
 
-  <!-- floating widgets -->
+  <!-- # SECTION: DESKTOP WIDGETS (quote / status / clock) -->
   <div class="widget quote-widget">
     <p>"Curiosity compounds — across circuits, code and chains."</p>
     <span>— A.Y. · notes</span>
@@ -55,7 +56,7 @@
     <div class="date" id="clockDate">--</div>
   </div>
 
-  <!-- desktop icons -->
+  <!-- # SECTION: DESKTOP ICONS (6-column grid) -->
   <div class="icons-grid">
     <button class="desktop-icon" data-win="profile"><span>👤</span>Profile</button>
     <button class="desktop-icon" data-win="github"><span>📊</span>Contributions</button>
@@ -71,7 +72,7 @@
     <a class="desktop-icon" href="assets/Akshansh-Yadav-Resume.pdf" target="_blank"><span>📄</span>Resume.pdf</a>
   </div>
 
-  <!-- windows -->
+  <!-- # SECTION: WINDOW - PROFILE -->
   <div class="window" id="win-profile" data-win="profile" style="left:14%;top:10%;">
     <div class="titlebar"><span class="title">👤 Profile.exe</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
@@ -84,26 +85,30 @@
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - GITHUB CONTRIBUTIONS -->
   <div class="window" id="win-github" data-win="github" style="left:8%;top:46%;width:440px;">
     <div class="titlebar"><span class="title">📊 Contributions</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
     </div>
     <div class="content">
-      <p class="role">github.com/<a href="https://github.com/expediator" target="_blank">expediator</a></p>
+      <p class="role">github.com/<a href="https://github.com/expediator" target="_blank">expediator</a> <button class="gh-refresh" title="Refresh stats">🔄</button></p>
       <img class="gh-img gh-chart" src="https://ghchart.rshah.org/3b9eff/expediator" alt="GitHub contribution chart" loading="lazy" onerror="this.style.display='none'">
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - GITHUB STATS -->
   <div class="window" id="win-githubstats" data-win="githubstats" style="left:58%;top:48%;width:440px;">
     <div class="titlebar"><span class="title">📈 GitHub Stats</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
     </div>
     <div class="content">
-      <img class="gh-img" src="https://github-readme-stats.vercel.app/api?username=expediator&show_icons=true&theme=transparent&hide_border=true&title_color=7fc4ff&icon_color=3b9eff&text_color=c7cad1" alt="GitHub stats" loading="lazy" onerror="this.style.display='none'">
-      <img class="gh-img" src="https://github-readme-streak-stats.herokuapp.com/?user=expediator&theme=transparent&hide_border=true&ring=3b9eff&fire=bfa3ff&currStreakLabel=7fc4ff" alt="GitHub streak stats" loading="lazy" onerror="this.style.display='none'">
+      <p class="role"><button class="gh-refresh" title="Refresh stats">🔄 Refresh</button></p>
+      <img class="gh-img" src="https://github-readme-stats.vercel.app/api?username=expediator&show_icons=true&theme=transparent&hide_border=true&title_color=7fc4ff&icon_color=3b9eff&text_color=c7cad1&cache_seconds=0" alt="GitHub stats" loading="lazy" onerror="this.style.display='none'">
+      <img class="gh-img" src="https://github-readme-streak-stats.herokuapp.com/?user=expediator&theme=transparent&hide_border=true&ring=3b9eff&fire=bfa3ff&currStreakLabel=7fc4ff&cache_seconds=0" alt="GitHub streak stats" loading="lazy" onerror="this.style.display='none'">
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - EDUCATION -->
   <div class="window" id="win-education" data-win="education" style="left:30%;top:16%;">
     <div class="titlebar"><span class="title">🎓 Education.txt</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
@@ -115,6 +120,7 @@
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - SKILLS -->
   <div class="window" id="win-skills" data-win="skills" style="left:46%;top:10%;">
     <div class="titlebar"><span class="title">💻 Skills.exe</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
@@ -128,6 +134,7 @@
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - PROJECTS -->
   <div class="window" id="win-projects" data-win="projects" style="left:20%;top:24%;">
     <div class="titlebar"><span class="title">🧩 Projects</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
@@ -145,6 +152,7 @@
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - EXPERIENCE -->
   <div class="window" id="win-experience" data-win="experience" style="left:38%;top:30%;">
     <div class="titlebar"><span class="title">💼 Experience.exe</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
@@ -159,6 +167,7 @@
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - ACHIEVEMENTS -->
   <div class="window" id="win-achievements" data-win="achievements" style="left:12%;top:36%;">
     <div class="titlebar"><span class="title">🏆 Achievements.txt</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
@@ -172,6 +181,7 @@
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - INTERESTS -->
   <div class="window" id="win-interests" data-win="interests" style="left:50%;top:34%;">
     <div class="titlebar"><span class="title">🌐 Interests.exe</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
@@ -185,6 +195,7 @@
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - CONTACT -->
   <div class="window" id="win-contact" data-win="contact" style="left:26%;top:42%;">
     <div class="titlebar"><span class="title">✉️ Contact.exe</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
@@ -198,6 +209,7 @@
     </div>
   </div>
 
+  <!-- # SECTION: WINDOW - MUSIC LIBRARY -->
   <div class="window" id="win-musiclibrary" data-win="musiclibrary" style="left:32%;top:14%;width:420px;">
     <div class="titlebar"><span class="title">🎵 Music Library</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
@@ -237,7 +249,7 @@
 
 </div>
 
-<!-- taskbar -->
+<!-- # SECTION: TASKBAR -->
 <div class="taskbar">
   <button class="start-btn">⊞ Start</button>
   <div class="taskbar-icons">
@@ -269,8 +281,9 @@
   </div>
 </div>
 
+<!-- # SECTION: AUDIO PLAYER ELEMENT -->
 <audio id="audioPlayer"></audio>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=6"></script>
 </body>
 </html>

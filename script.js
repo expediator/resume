@@ -1,4 +1,4 @@
-// --- window management ---
+// # SECTION: WINDOW MANAGEMENT (open / close / focus / drag)
 let zTop = 5;
 function openWindow(name){
   const win = document.getElementById('win-' + name);
@@ -47,7 +47,7 @@ document.querySelectorAll('.window').forEach(win=>{
   document.addEventListener('mouseup', ()=>{ dragging=false; bar.style.cursor='grab'; });
 });
 
-// --- live clock ---
+// # SECTION: LIVE CLOCK
 function tick(){
   const now = new Date();
   const time = now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
@@ -58,7 +58,7 @@ function tick(){
 }
 tick(); setInterval(tick, 30000);
 
-// --- music player: rotating library, autoplay with credits ---
+// # SECTION: MUSIC PLAYER (taskbar autoplay library)
 const tracks = [
   {src:'assets/music/tenderness.mp3', name:'Tenderness', credit:'Music: "Tenderness" by Bensound.com (royalty-free, credit required)'},
   {src:'assets/music/sweet.mp3', name:'Sweet', credit:'Music: "Sweet" by Bensound.com (royalty-free, credit required)'},
@@ -126,6 +126,7 @@ volBtn.addEventListener('click', ()=>{
 
 tryAutoplay();
 
+// # SECTION: STARTUP BEHAVIOR (auto-open windows, auto-refresh)
 // start button: opens profile as a friendly default
 document.querySelector('.start-btn').addEventListener('click', ()=>openWindow('profile'));
 
@@ -134,7 +135,7 @@ openWindow('github');
 openWindow('profile');
 setTimeout(()=>location.reload(), 120000);
 
-// music library: spotify/youtube tabs
+// # SECTION: MUSIC LIBRARY (spotify/youtube tabs)
 document.querySelectorAll('.lib-tab').forEach(tab=>{
   tab.addEventListener('click', ()=>{
     document.querySelectorAll('.lib-tab').forEach(t=>t.classList.remove('active'));
@@ -150,7 +151,7 @@ document.querySelectorAll('.yt-list li').forEach(item=>{
   });
 });
 
-// music search: paste a link to play inline, or type a query to search on the platform
+// # SECTION: MUSIC LIBRARY SEARCH (spotify + youtube, paste-link-or-search)
 function spotifyEmbedFromInput(v){
   const m = v.match(/open\.spotify\.com\/(track|playlist|album)\/([a-zA-Z0-9]+)/);
   return m ? `https://open.spotify.com/embed/${m[1]}/${m[2]}?utm_source=generator&theme=0` : null;
@@ -182,7 +183,7 @@ function runYoutubeSearch(){
 document.getElementById('ytSearchBtn').addEventListener('click', runYoutubeSearch);
 document.getElementById('ytSearch').addEventListener('keydown', e=>{ if(e.key === 'Enter') runYoutubeSearch(); });
 
-// wallpapers: auto-rotate every 60s, manual override via top-left tab bar
+// # SECTION: WALLPAPER ROTATION (auto every 60s, manual via top-left tabs)
 const wallpapers = [
   {url:'assets/wallpapers/drink.jpg', accent:'#ff5c5c'},
   {url:'assets/wallpapers/sunset.jpg', accent:'#ff8a3d'},
@@ -209,6 +210,7 @@ document.querySelectorAll('.wp-tab').forEach(tab=>{
 });
 setWallpaper(0);
 
+// # SECTION: VISIT COUNTER POSITIONING
 // keep the visit-counter badge pinned just below the status widget, edge-aligned
 function positionVisitCounter(){
   const widget = document.querySelector('.status-widget');
@@ -220,3 +222,17 @@ function positionVisitCounter(){
 }
 positionVisitCounter();
 window.addEventListener('resize', positionVisitCounter);
+
+// # SECTION: GITHUB STATS REFRESH
+// the stats/streak/chart images get cached by the browser and by the services
+// themselves, so re-stamp each with a fresh timestamp on load and on demand
+function refreshGithubImages(){
+  document.querySelectorAll('.gh-img').forEach(img=>{
+    const base = img.dataset.base || img.src.split(/[?&]_=/)[0];
+    img.dataset.base = base;
+    const sep = base.includes('?') ? '&' : '?';
+    img.src = base + sep + '_=' + Date.now();
+  });
+}
+refreshGithubImages();
+document.querySelectorAll('.gh-refresh').forEach(btn=>btn.addEventListener('click', refreshGithubImages));
