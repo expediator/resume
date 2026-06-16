@@ -16,9 +16,21 @@
 <meta name="twitter:title" content="Akshansh Yadav — Interactive Resume">
 <meta name="twitter:description" content="B.Tech student exploring Web3, Rust, Solidity, Solana & DevOps.">
 <meta name="twitter:image" content="https://expediator.github.io/akshansh-resume/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Poppins:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="wallpaper" id="wallpaper"></div>
+<div class="wallpaper-tabs" id="wallpaperTabs">
+  <button class="wp-tab active" data-wp="0" title="Bloody Mary">🍹</button>
+  <button class="wp-tab" data-wp="1" title="Sunset">🌅</button>
+  <button class="wp-tab" data-wp="2" title="Neon Nights">🌃</button>
+  <button class="wp-tab" data-wp="3" title="Tokyo Lights">🚖</button>
+  <button class="wp-tab" data-wp="4" title="Nebula">🌌</button>
+</div>
 
 <div class="desktop" id="desktop">
 
@@ -43,7 +55,8 @@
   <!-- desktop icons -->
   <div class="icons-grid">
     <button class="desktop-icon" data-win="profile"><span>👤</span>Profile</button>
-    <button class="desktop-icon" data-win="github"><span>📊</span>GitHub</button>
+    <button class="desktop-icon" data-win="github"><span>📊</span>Contributions</button>
+    <button class="desktop-icon" data-win="githubstats"><span>📈</span>GitHub Stats</button>
     <button class="desktop-icon" data-win="education"><span>🎓</span>Education</button>
     <button class="desktop-icon" data-win="skills"><span>💻</span>Skills</button>
     <button class="desktop-icon" data-win="projects"><span>🧩</span>Projects</button>
@@ -69,15 +82,22 @@
   </div>
 
   <div class="window" id="win-github" data-win="github" style="left:8%;top:46%;width:440px;">
-    <div class="titlebar"><span class="title">📊 GitHub Activity</span>
+    <div class="titlebar"><span class="title">📊 Contributions</span>
       <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
     </div>
     <div class="content">
       <p class="role">github.com/<a href="https://github.com/expediator" target="_blank">expediator</a></p>
+      <img class="gh-img gh-chart" src="https://ghchart.rshah.org/3b9eff/expediator" alt="GitHub contribution chart" loading="lazy" onerror="this.style.display='none'">
+    </div>
+  </div>
+
+  <div class="window" id="win-githubstats" data-win="githubstats" style="left:58%;top:48%;width:440px;">
+    <div class="titlebar"><span class="title">📈 GitHub Stats</span>
+      <div class="controls"><button class="min">&#8211;</button><button class="max">&#9633;</button><button class="close">&#10005;</button></div>
+    </div>
+    <div class="content">
       <img class="gh-img" src="https://github-readme-stats.vercel.app/api?username=expediator&show_icons=true&theme=transparent&hide_border=true&title_color=7fc4ff&icon_color=3b9eff&text_color=c7cad1" alt="GitHub stats" loading="lazy" onerror="this.style.display='none'">
       <img class="gh-img" src="https://github-readme-streak-stats.herokuapp.com/?user=expediator&theme=transparent&hide_border=true&ring=3b9eff&fire=bfa3ff&currStreakLabel=7fc4ff" alt="GitHub streak stats" loading="lazy" onerror="this.style.display='none'">
-      <p class="gh-label">Contribution graph</p>
-      <img class="gh-img gh-chart" src="https://ghchart.rshah.org/3b9eff/expediator" alt="GitHub contribution chart" loading="lazy" onerror="this.style.display='none'">
     </div>
   </div>
 
@@ -183,10 +203,18 @@
         <button class="lib-tab" data-tab="youtube">YouTube</button>
       </div>
       <div class="lib-pane" id="pane-spotify">
-        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1EIcMbGxNGUuZo?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allow="encrypted-media" loading="lazy"></iframe>
+        <div class="lib-search">
+          <input id="spotifySearch" placeholder="Paste a Spotify track/playlist link, or type to search…">
+          <button id="spotifySearchBtn">🔍</button>
+        </div>
+        <iframe id="spotifyFrame" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIcMbGxNGUuZo?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allow="encrypted-media" loading="lazy"></iframe>
         <p class="credit-line">"R&B Soul Mix" — streamed via Spotify</p>
       </div>
       <div class="lib-pane" id="pane-youtube" style="display:none;">
+        <div class="lib-search">
+          <input id="ytSearch" placeholder="Paste a YouTube link, or type to search…">
+          <button id="ytSearchBtn">🔍</button>
+        </div>
         <ul class="yt-list">
           <li data-yt="vBy7FaapGRo">Daniel Caesar ft. H.E.R. — Best Part</li>
           <li data-yt="by3yRdlQvzs">Khalid — Location</li>
@@ -205,7 +233,8 @@
   <button class="start-btn">⊞ Start</button>
   <div class="taskbar-icons">
     <button data-win="profile" title="Profile">👤</button>
-    <button data-win="github" title="GitHub Activity">📊</button>
+    <button data-win="github" title="Contributions">📊</button>
+    <button data-win="githubstats" title="GitHub Stats">📈</button>
     <button data-win="education" title="Education">🎓</button>
     <button data-win="skills" title="Skills">💻</button>
     <button data-win="projects" title="Projects">🧩</button>

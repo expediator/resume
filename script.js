@@ -131,3 +131,62 @@ document.querySelectorAll('.yt-list li').forEach(item=>{
       `<iframe src="https://www.youtube.com/embed/${item.dataset.yt}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
   });
 });
+
+// music search: paste a link to play inline, or type a query to search on the platform
+function spotifyEmbedFromInput(v){
+  const m = v.match(/open\.spotify\.com\/(track|playlist|album)\/([a-zA-Z0-9]+)/);
+  return m ? `https://open.spotify.com/embed/${m[1]}/${m[2]}?utm_source=generator&theme=0` : null;
+}
+function runSpotifySearch(){
+  const v = document.getElementById('spotifySearch').value.trim();
+  if(!v) return;
+  const embed = spotifyEmbedFromInput(v);
+  if(embed) document.getElementById('spotifyFrame').src = embed;
+  else window.open(`https://open.spotify.com/search/${encodeURIComponent(v)}`, '_blank');
+}
+document.getElementById('spotifySearchBtn').addEventListener('click', runSpotifySearch);
+document.getElementById('spotifySearch').addEventListener('keydown', e=>{ if(e.key === 'Enter') runSpotifySearch(); });
+
+function youtubeIdFromInput(v){
+  const m = v.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/);
+  if(m) return m[1];
+  if(/^[a-zA-Z0-9_-]{11}$/.test(v.trim())) return v.trim();
+  return null;
+}
+function runYoutubeSearch(){
+  const v = document.getElementById('ytSearch').value.trim();
+  if(!v) return;
+  const id = youtubeIdFromInput(v);
+  if(id) document.getElementById('ytFrameWrap').innerHTML =
+    `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+  else window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(v)}`, '_blank');
+}
+document.getElementById('ytSearchBtn').addEventListener('click', runYoutubeSearch);
+document.getElementById('ytSearch').addEventListener('keydown', e=>{ if(e.key === 'Enter') runYoutubeSearch(); });
+
+// wallpapers: auto-rotate every 60s, manual override via top-left tab bar
+const wallpapers = [
+  {url:'assets/wallpapers/drink.jpg', accent:'#ff5c5c'},
+  {url:'assets/wallpapers/sunset.jpg', accent:'#ff8a3d'},
+  {url:'assets/wallpapers/neon1.jpg', accent:'#ff3d6e'},
+  {url:'assets/wallpapers/neon2.jpg', accent:'#3ddcdc'},
+  {url:'assets/wallpapers/nebula.jpg', accent:'#bf6bff'}
+];
+let wpIndex = 0;
+const wallpaperEl = document.getElementById('wallpaper');
+function setWallpaper(i){
+  wpIndex = i;
+  const wp = wallpapers[i];
+  wallpaperEl.style.backgroundImage = `linear-gradient(rgba(8,9,12,.62),rgba(8,9,12,.8)), url('${wp.url}')`;
+  document.documentElement.style.setProperty('--accent', wp.accent);
+  document.querySelectorAll('.wp-tab').forEach(t=>t.classList.toggle('active', Number(t.dataset.wp) === i));
+}
+let wpTimer = setInterval(()=>setWallpaper((wpIndex + 1) % wallpapers.length), 60000);
+document.querySelectorAll('.wp-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    setWallpaper(Number(tab.dataset.wp));
+    clearInterval(wpTimer);
+    wpTimer = setInterval(()=>setWallpaper((wpIndex + 1) % wallpapers.length), 60000);
+  });
+});
+setWallpaper(0);
