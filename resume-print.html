@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Akshansh Yadav — Resume</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 9.5pt;
+    color: #1a1a1a;
+    background: #fff;
+    line-height: 1.45;
+  }
+
+  a { color: #1a56db; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* --- Page shell --- */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    padding: 13mm 14mm 10mm;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  /* --- Header --- */
+  .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+  .header-left h1 { font-size: 20pt; font-weight: 700; letter-spacing: -.3px; }
+  .header-left .role { font-size: 9pt; color: #444; margin-top: 2px; }
+  .header-right { text-align: right; font-size: 8.5pt; color: #333; line-height: 1.7; }
+  .header-right a { color: #1a56db; }
+
+  hr { border: none; border-top: 1.5px solid #e0e0e0; margin: 5px 0; }
+
+  /* --- Section titles --- */
+  .section-title {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1a56db;
+    margin: 7px 0 3px;
+  }
+
+  /* --- Two-column layout --- */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+
+  /* --- Entry rows --- */
+  .entry { margin-bottom: 5px; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry-header b { font-size: 9pt; font-weight: 600; }
+  .entry-header .meta { font-size: 8pt; color: #555; white-space: nowrap; margin-left: 6px; }
+  .entry .sub { font-size: 8.5pt; color: #333; }
+  .entry p { font-size: 8.5pt; color: #333; margin-top: 1px; }
+  .entry .tags { margin-top: 2px; display: flex; flex-wrap: wrap; gap: 3px; }
+  .entry .tags span {
+    background: #f0f4ff; color: #1a56db;
+    border: 1px solid #d0dcff; border-radius: 3px;
+    padding: 0 4px; font-size: 7.5pt; font-weight: 500;
+  }
+
+  /* --- Skills grid --- */
+  .skills-grid { display: grid; grid-template-columns: 90px 1fr; gap: 2px 8px; font-size: 8.5pt; }
+  .skills-grid .label { font-weight: 600; color: #333; }
+  .skills-grid .val { color: #1a1a1a; }
+
+  /* --- Achievements / Interests list --- */
+  ul.bullet { padding-left: 14px; margin: 0; }
+  ul.bullet li { font-size: 8.5pt; color: #333; margin-bottom: 1px; }
+
+  .interests { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 2px; }
+  .interests span {
+    background: #f5f5f5; color: #333;
+    border: 1px solid #ddd; border-radius: 3px;
+    padding: 0 5px; font-size: 8pt;
+  }
+
+  /* --- Print --- */
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { margin: 0; padding: 13mm 14mm 10mm; }
+    a { color: #1a56db !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Akshansh Yadav</h1>
+      <div class="role">Full-Stack &amp; Web3 Developer &nbsp;|&nbsp; B.Tech Civil Engineering · HBTU Kanpur</div>
+    </div>
+    <div class="header-right">
+      <a href="mailto:250102005@gmail.com">250102005@gmail.com</a><br>
+      <a href="https://linkedin.com/in/akshansh-yadav-554926304" target="_blank">linkedin.com/in/akshansh-yadav-554926304</a><br>
+      <a href="https://github.com/expediator" target="_blank">github.com/expediator</a> &nbsp;·&nbsp;
+      <a href="https://x.com/expediator_" target="_blank">x.com/expediator_</a><br>
+      <a href="https://expediator.github.io/resume/" target="_blank">expediator.github.io/resume</a>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- BIO -->
+  <p style="font-size:8.5pt;color:#333;margin-bottom:3px;">
+    Building at the intersection of TypeScript, Redis, and Decentralised Tech (Solana/Ethereum).
+    Hands-on with embedded systems, computer vision, and game dev. Exploring Web3, CI/CD, and cloud infrastructure.
+  </p>
+
+  <hr>
+
+  <!-- SKILLS -->
+  <div class="section-title">Skills</div>
+  <div class="skills-grid">
+    <span class="label">Languages</span>      <span class="val">Python · C · SQL · JavaScript · TypeScript · Rust · Solidity</span>
+    <span class="label">Tools &amp; Tech</span>    <span class="val">Git · GitHub · Node.js · Arduino IDE · MS Excel</span>
+    <span class="label">Libraries</span>      <span class="val">OpenCV · MediaPipe · pygame · Kivy · pandas · yfinance</span>
+    <span class="label">Core Areas</span>     <span class="val">Computer Vision · Embedded Systems · DBMS · Basic Electronics</span>
+    <span class="label">Exploring</span>     <span class="val">Solana · Ethereum · Smart Contracts · CI/CD · Cloud &amp; Containers</span>
+  </div>
+
+  <hr>
+
+  <!-- PROJECTS -->
+  <div class="section-title">Projects</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <b>Hand Gesture &amp; Voice Controlled RC Car</b>
+      <span class="meta">2025 · <a href="https://github.com/expediator/gesture-controlled-robot" target="_blank">github.com/expediator/gesture-controlled-robot</a></span>
+    </div>
+    <p>Arduino RC car with real-time hand gesture recognition (MediaPipe) and offline voice control (Vosk, English + Hindi). Commands sent over UDP to ESP32. Full circuit designed: motor driver, sensors, power management. Built in 4 weeks.</p>
+    <div class="tags"><span>Arduino</span><span>OpenCV</span><span>MediaPipe</span><span>Vosk</span><span>UDP/ESP32</span><span>Embedded C</span></div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <b>AI Face Rating &amp; Analysis App</b>
+      <span class="meta">2026 · <a href="https://github.com/expediator/face-rater" target="_blank">github.com/expediator/face-rater</a></span>
+    </div>
+    <p>16-version evolution (v1.11 → v2.01). Dual-view Tkinter GUI — scores jaw, cheekbones, symmetry, eye area from front + side photos using MediaPipe FaceMesh; gender-specific dimorphism weighting and soft-scoring calibration.</p>
+    <div class="tags"><span>Python</span><span>OpenCV</span><span>MediaPipe</span><span>Tkinter</span></div>
+  </div>
+
+  <div class="two-col">
+    <div class="entry">
+      <div class="entry-header">
+        <b>Space Shooter</b>
+        <span class="meta"><a href="https://github.com/expediator/space-shooter" target="_blank">github.com/expediator/space-shooter</a></span>
+      </div>
+      <p>2D arcade shooter with physics, enemy AI (seek/wander/dash), power-ups, particle explosions, and multi-level progression. Full OOP in pygame.</p>
+      <div class="tags"><span>Python</span><span>pygame</span><span>OOP</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header">
+        <b>Trading Strategy Simulator</b>
+        <span class="meta"><a href="https://github.com/expediator/trading-strategy-simulator" target="_blank">github.com/expediator/trading-strategy-simulator</a></span>
+      </div>
+      <p>Backtests SMA50/SMA200 golden-cross strategy on live stock data (yfinance). Simulates full portfolio P&amp;L with chart output.</p>
+      <div class="tags"><span>Python</span><span>pandas</span><span>yfinance</span></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="entry">
+      <div class="entry-header">
+        <b>Tic-Tac-Toe AI</b>
+        <span class="meta"><a href="https://github.com/expediator/tic-tac-toe" target="_blank">github.com/expediator/tic-tac-toe</a></span>
+      </div>
+      <p>Kivy GUI with minimax AI (unbeatable), Python CLI, and a C implementation — three versions in one repo.</p>
+      <div class="tags"><span>Python</span><span>Kivy</span><span>Minimax</span><span>C</span></div>
+    </div>
+    <div class="entry">
+      <div class="entry-header">
+        <b>Interactive Portfolio (Windows-OS Style)</b>
+        <span class="meta"><a href="https://expediator.github.io/resume/" target="_blank">expediator.github.io/resume</a></span>
+      </div>
+      <p>Draggable-window desktop resume with music player, GitHub heatmap, rotating wallpapers. Plain HTML/CSS/JS, deployed on GitHub Pages.</p>
+      <div class="tags"><span>HTML/CSS/JS</span><span>GitHub Pages</span></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- EXPERIENCE -->
+  <div class="section-title">Experience</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <b>Founding Member &amp; Social Media Lead</b> — Simbha Kunj Foundation (NGO)
+      <span class="meta">Feb 2021 – Present · Kanpur</span>
+    </div>
+    <p>Co-founded an animal welfare and student support NGO. Led social media strategy and content planning, growing community outreach.</p>
+  </div>
+
+  <div class="two-col">
+    <div class="entry">
+      <div class="entry-header">
+        <b>Social &amp; Outreach Head</b> — YouTube Channel
+        <span class="meta">Oct 2025 – Present</span>
+      </div>
+      <p>Drove audience growth strategy and content positioning; improved viewer engagement and channel reach.</p>
+    </div>
+    <div class="entry">
+      <div class="entry-header">
+        <b>Independent — E-Commerce &amp; Dropshipping</b>
+        <span class="meta">2024 – 2025</span>
+      </div>
+      <p>Built knowledge of product sourcing, digital marketing funnels, and data-driven sales performance.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- EDUCATION + ACHIEVEMENTS side by side -->
+  <div class="two-col">
+    <div>
+      <div class="section-title">Education</div>
+      <div class="entry">
+        <div class="entry-header"><b>B.Tech in Civil Engineering</b><span class="meta">Aug 2025 – Apr 2029</span></div>
+        <div class="sub">Harcourt Butler Technical University, Kanpur</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header"><b>Class XII</b><span class="meta">2024 · 85% overall · 88% best 5</span></div>
+      </div>
+      <div class="entry">
+        <div class="entry-header"><b>Class X</b><span class="meta">2022 · 93.6% overall · 94.6% best 5</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-title">Achievements</div>
+      <ul class="bullet">
+        <li>Qualified JEE Mains 2024 &amp; 2025</li>
+        <li>Appeared for JEE Advanced 2024 &amp; 2025</li>
+        <li>SOF Olympiads (Class 11) — English: Intl. Rank 240 · Science: 1084 · Maths: 3872</li>
+        <li>RC Plane Development — design, assembly &amp; flight testing</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- INTERESTS -->
+  <div class="section-title">Interests</div>
+  <div class="interests">
+    <span>Web3</span><span>Blockchain Infrastructure</span><span>Solana</span><span>Ethereum</span>
+    <span>Smart Contracts</span><span>DevOps</span><span>CI/CD</span><span>Cloud &amp; Containers</span>
+    <span>Computer Vision</span><span>Embedded Systems</span><span>Open Source</span>
+  </div>
+
+</div>
+</body>
+</html>
