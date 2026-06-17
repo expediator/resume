@@ -16,7 +16,7 @@
     line-height: 1.4;
   }
 
-  a { color: #111; text-decoration: none; }
+  a { color: #1a56db; text-decoration: underline; }
 
   .page {
     width: 210mm;
@@ -36,7 +36,7 @@
 
   /* DIVIDER */
   hr { border: none; border-top: 1px solid #111; margin: 4px 0; }
-  hr.thin { border-top: 1px dotted #aaa; margin: 3px 0; }
+  hr.thin { border-top: 1px dotted #999; margin: 3px 0; }
 
   /* SECTION TITLES */
   .section-title {
@@ -49,9 +49,9 @@
     padding-bottom: 1px;
   }
 
-  /* SKILL ROWS — plain text */
+  /* SKILL ROWS */
   .skill-row { display: flex; gap: 6px; margin-bottom: 2px; font-size: 8.5pt; }
-  .skill-row .cat { font-weight: 700; min-width: 80px; flex-shrink: 0; }
+  .skill-row .cat { font-weight: 700; min-width: 82px; flex-shrink: 0; }
   .skill-row .vals { color: #222; }
 
   /* ENTRIES */
@@ -68,7 +68,7 @@
 
   /* BULLET LIST */
   ul.bullet { padding-left: 14px; margin: 0; }
-  ul.bullet li { font-size: 8.5pt; color: #222; margin-bottom: 1px; list-style-type: '-  '; }
+  ul.bullet li { font-size: 8.5pt; color: #222; margin-bottom: 1px; }
 
   /* INTERESTS */
   .interests { font-size: 8.5pt; color: #222; }
@@ -76,6 +76,7 @@
   @media print {
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page { margin: 0; }
+    a { color: #1a56db !important; }
   }
 </style>
 </head>
@@ -105,23 +106,31 @@
   <div class="section-title">Skills</div>
   <div class="skill-row">
     <span class="cat">Languages:</span>
-    <span class="vals">TypeScript, JavaScript, Python, C, SQL, Rust, Solidity</span>
+    <span class="vals">TypeScript, JavaScript (ES2024), Python 3.12, C, SQL, Solidity, Rust (learning), Bash</span>
   </div>
   <div class="skill-row">
-    <span class="cat">Tools &amp; Tech:</span>
-    <span class="vals">Next.js 14, React, Redis (Upstash), NextAuth.js, Node.js, Tailwind CSS, Git, Railway, Arduino IDE</span>
+    <span class="cat">Frameworks:</span>
+    <span class="vals">Next.js 14 (App Router), React 18, Node.js 22, Tailwind CSS, Express.js</span>
   </div>
   <div class="skill-row">
-    <span class="cat">Libraries:</span>
-    <span class="vals">OpenCV, MediaPipe, Canvas API, pandas, pygame, Kivy, yfinance</span>
+    <span class="cat">Auth &amp; Data:</span>
+    <span class="vals">NextAuth.js v4, OAuth 2.0, JWT, Zod, Upstash Redis, REST API design, WebSockets</span>
   </div>
   <div class="skill-row">
-    <span class="cat">Core Areas:</span>
-    <span class="vals">Full-Stack Web, REST API Design, Computer Vision, Embedded Systems, DBMS</span>
+    <span class="cat">UI &amp; Viz:</span>
+    <span class="vals">Recharts, Lucide React, Canvas API, shadcn/ui, CoinGecko API</span>
   </div>
   <div class="skill-row">
-    <span class="cat">Exploring:</span>
-    <span class="vals">Solana, Ethereum, Smart Contracts, CI/CD, Docker, Cloud &amp; Containers</span>
+    <span class="cat">CV &amp; Embedded:</span>
+    <span class="vals">OpenCV, MediaPipe FaceMesh, Vosk STT, NumPy, pandas, Arduino/ESP32, Embedded C</span>
+  </div>
+  <div class="skill-row">
+    <span class="cat">DevOps:</span>
+    <span class="vals">Git, GitHub, Railway, GitHub Pages, GitHub Actions (learning), Docker (learning)</span>
+  </div>
+  <div class="skill-row">
+    <span class="cat">Web3:</span>
+    <span class="vals">Solana, Ethereum, Solidity, ethers.js, Anchor framework, DeFi / AMM mechanics</span>
   </div>
 
   <hr class="thin">
@@ -132,46 +141,46 @@
   <div class="entry">
     <div class="entry-header">
       <b>SwapX — CEX + DEX Crypto Exchange</b>
-      <span class="meta">2026 | <a href="https://easygoing-motivation-production.up.railway.app">Live</a> | <a href="https://github.com/expediator/swapx-dex">github/swapx-dex</a></span>
+      <span class="meta">2026 &nbsp;|&nbsp; <a href="https://easygoing-motivation-production.up.railway.app">Live ↗</a> &nbsp;|&nbsp; <a href="https://github.com/expediator/swapx-dex">github/swapx-dex ↗</a></span>
     </div>
-    <p>Full-stack crypto trading platform: CEX order-book (market + limit orders, 0.1% fee) and DEX AMM swaps (0.3% fee, slippage) for 30+ tokens. Real-time CoinGecko prices in Upstash Redis (60s TTL); Google OAuth; per-user portfolio and trade history in Redis. Deployed on Railway.</p>
-    <div class="tags">Next.js 14 | TypeScript | Upstash Redis | NextAuth | Tailwind CSS | CoinGecko API | Web3</div>
+    <p>Full-stack trading platform: CEX order-book (market + limit orders, 0.1% fee) and DEX AMM swaps (constant-product formula, 0.3% fee + slippage) for 30+ tokens. CoinGecko prices cached in Upstash Redis (60s TTL); Google OAuth via NextAuth; per-user portfolio + trade history in Redis Hashes/Lists. Deployed on Railway.</p>
+    <div class="tags">Next.js 14 · TypeScript · Upstash Redis · NextAuth.js · Zod · Recharts · Tailwind CSS · CoinGecko API · Railway</div>
   </div>
 
   <div class="entry">
     <div class="entry-header">
       <b>Hand Gesture &amp; Voice Controlled RC Car</b>
-      <span class="meta">2025 | <a href="https://github.com/expediator/gesture-controlled-robot">github/gesture-robot</a></span>
+      <span class="meta">2025 &nbsp;|&nbsp; <a href="https://github.com/expediator/gesture-controlled-robot">github/gesture-robot ↗</a></span>
     </div>
-    <p>Built solo in 4 weeks. MediaPipe hand gestures via webcam + Vosk offline speech recognition (English + Hindi), both relayed over UDP to ESP32. Designed full circuit: L298N motor driver, HC-SR04 ultrasonic obstacle sensor, LiPo power management.</p>
-    <div class="tags">Arduino/ESP32 | OpenCV | MediaPipe | Vosk | UDP | Embedded C</div>
+    <p>Built solo in 4 weeks. Dual-mode control: MediaPipe hand-landmark gestures via webcam + Vosk offline speech-to-text (English + Hindi), both relayed over UDP sockets to ESP32. Designed full circuit from scratch: L298N motor driver, HC-SR04 ultrasonic sensor, LiPo power rail.</p>
+    <div class="tags">ESP32 · Arduino (Embedded C) · OpenCV · MediaPipe · Vosk · NumPy · UDP</div>
   </div>
 
   <div class="entry">
     <div class="entry-header">
       <b>FaceMetrics — AI Facial Geometry Analysis</b>
-      <span class="meta">2026 | <a href="https://expediator.github.io/face-rater/">Live</a> | <a href="https://github.com/expediator/face-rater">github/face-rater</a></span>
+      <span class="meta">2026 &nbsp;|&nbsp; <a href="https://expediator.github.io/face-rater/">Live ↗</a> &nbsp;|&nbsp; <a href="https://github.com/expediator/face-rater">github/face-rater ↗</a></span>
     </div>
-    <p>Evolved through 16 versions (CLI → Tkinter GUI → browser). Scores jaw, cheekbones, symmetry, eye area + 7 more metrics via 468 MediaPipe FaceMesh landmarks — 100% in-browser. Auto-brightness enhancement; gender-specific dimorphism weighting.</p>
-    <div class="tags">JavaScript | MediaPipe FaceMesh | Canvas API | Python | OpenCV</div>
+    <p>Evolved through 16 iterations (Python CLI → Tkinter GUI → browser app). Scores 11 facial metrics (jaw width, cheekbone ratio, symmetry, eye area, chin projection, etc.) via 468 MediaPipe FaceMesh landmarks — 100% in-browser, zero server. Webcam capture + auto-brightness enhancement; gender-specific dimorphism weighting.</p>
+    <div class="tags">JavaScript · MediaPipe FaceMesh · Canvas API · Python · OpenCV · NumPy</div>
   </div>
 
   <div class="two-col">
     <div class="entry">
       <div class="entry-header">
         <b>Space Shooter</b>
-        <span class="meta">2025 | <a href="https://expediator.github.io/space-shooter/">Play</a></span>
+        <span class="meta">2025 &nbsp;|&nbsp; <a href="https://expediator.github.io/space-shooter/">Play ↗</a> &nbsp;|&nbsp; <a href="https://github.com/expediator/space-shooter">GitHub ↗</a></span>
       </div>
-      <p>2D arcade shooter rewritten from Python/pygame to pure JS Canvas — instant browser load. Thrust+inertia physics, two AI enemy types, power-ups, particle FX, touch support.</p>
-      <div class="tags">JavaScript | Canvas API | OOP | Python/pygame</div>
+      <p>2D arcade shooter rewritten from Python/pygame → pure JS Canvas; loads instantly in any browser. Thrust+inertia physics, two AI enemy types, power-up system, particle FX, touch support.</p>
+      <div class="tags">JavaScript · Canvas API · OOP · Python/pygame</div>
     </div>
     <div class="entry">
       <div class="entry-header">
         <b>Interactive Portfolio (Windows OS Style)</b>
-        <span class="meta">2025 | <a href="https://expediator.github.io/resume/">Live</a></span>
+        <span class="meta">2025 &nbsp;|&nbsp; <a href="https://expediator.github.io/resume/">Live ↗</a></span>
       </div>
-      <p>Draggable-window desktop resume — music player, GitHub heatmap, wallpapers. Zero frameworks; pure HTML/CSS/JS on GitHub Pages.</p>
-      <div class="tags">HTML/CSS/JS | GitHub Pages</div>
+      <p>Draggable-window desktop resume — music player, GitHub heatmap, rotating wallpapers. Pure HTML/CSS/JS, zero frameworks, on GitHub Pages.</p>
+      <div class="tags">HTML · CSS · JavaScript · GitHub Pages</div>
     </div>
   </div>
 
@@ -183,9 +192,9 @@
   <div class="entry">
     <div class="entry-header">
       <b>Founding Member &amp; Social Media Lead</b> — Simbha Kunj Foundation (NGO)
-      <span class="meta">Feb 2021 – Present | Kanpur</span>
+      <span class="meta">Feb 2021 – Present · Kanpur</span>
     </div>
-    <p>Co-founded animal welfare + student support NGO. Led social media strategy and community outreach.</p>
+    <p>Co-founded animal welfare + student support NGO. Led social media strategy and community outreach growth.</p>
   </div>
 
   <div class="two-col">
@@ -201,7 +210,7 @@
         <b>Independent — E-Commerce &amp; Dropshipping</b>
         <span class="meta">2024 – 2025</span>
       </div>
-      <p>Product sourcing, digital marketing funnels, and data-driven sales analysis.</p>
+      <p>Product sourcing, digital marketing funnels, data-driven sales analysis.</p>
     </div>
   </div>
 
@@ -226,7 +235,7 @@
       <div class="section-title">Achievements</div>
       <ul class="bullet">
         <li>Qualified JEE Mains 2024 &amp; 2025; JEE Advanced 2024 &amp; 2025</li>
-        <li>SOF Olympiads (Class 11) — English: Intl. Rank 240</li>
+        <li>SOF Olympiads (Cl. 11) — English: Intl. Rank 240</li>
         <li>RC Plane Development — design, assembly &amp; flight testing</li>
         <li>Co-Founded Simbha Kunj Foundation (NGO)</li>
       </ul>
@@ -238,8 +247,8 @@
   <!-- INTERESTS -->
   <div class="section-title">Interests</div>
   <div class="interests">
-    Web3 &amp; DeFi &nbsp;|&nbsp; Blockchain Infrastructure &nbsp;|&nbsp; Solana &amp; Ethereum &nbsp;|&nbsp;
-    Full-Stack Dev &nbsp;|&nbsp; REST API Design &nbsp;|&nbsp; DevOps &amp; CI/CD &nbsp;|&nbsp;
+    Web3 &amp; DeFi &nbsp;|&nbsp; AMM &amp; Order-Book Design &nbsp;|&nbsp; Solana &amp; Ethereum &nbsp;|&nbsp; Smart Contracts &nbsp;|&nbsp;
+    Full-Stack Dev &nbsp;|&nbsp; REST &amp; WebSocket APIs &nbsp;|&nbsp; DevOps &amp; CI/CD &nbsp;|&nbsp;
     Computer Vision &nbsp;|&nbsp; Embedded Systems &nbsp;|&nbsp; Open Source &nbsp;|&nbsp; AI &amp; LLMs
   </div>
 
