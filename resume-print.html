@@ -4,162 +4,127 @@
 <meta charset="UTF-8">
 <title>Akshansh Yadav — Resume</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Inter', Arial, sans-serif;
-    font-size: 9.5pt;
-    color: #1a1a1a;
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-size: 9pt;
+    color: #111;
     background: #fff;
-    line-height: 1.45;
+    line-height: 1.4;
   }
 
-  a { color: #1a56db; text-decoration: none; }
+  a { color: #111; text-decoration: none; }
 
-  /* --- Page shell --- */
   .page {
     width: 210mm;
     min-height: 297mm;
     max-height: 297mm;
-    padding: 0 14mm 10mm;
+    padding: 11mm 14mm 8mm;
     margin: 0 auto;
     overflow: hidden;
-    border-top: 5px solid transparent;
-    border-image: linear-gradient(to right, #1a56db, #7c3aed, #db2777) 1;
   }
 
-  .top-pad { height: 9px; }
+  /* HEADER */
+  .header { text-align: center; margin-bottom: 5px; }
+  .header h1 { font-size: 17pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  .header .role { font-size: 8.5pt; color: #333; margin: 1px 0 3px; letter-spacing: .5px; }
+  .header .contacts { font-size: 8pt; color: #222; }
+  .header .contacts span { margin: 0 4px; }
 
-  /* --- Header --- */
-  .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
-  .header-left h1 { font-size: 22pt; font-weight: 800; letter-spacing: -.5px; color: #0f172a; }
-  .header-left .role { font-size: 8.5pt; color: #64748b; margin-top: 1px; }
-  .header-right { text-align: right; font-size: 8.5pt; color: #333; line-height: 1.75; }
-  .header-right a { color: #1a56db; }
+  /* DIVIDER */
+  hr { border: none; border-top: 1px solid #111; margin: 4px 0; }
+  hr.thin { border-top: 1px dotted #aaa; margin: 3px 0; }
 
-  hr { border: none; border-top: 1px solid #e2e8f0; margin: 5px 0; }
-
-  /* --- Section titles with left accent --- */
+  /* SECTION TITLES */
   .section-title {
-    font-size: 7.5pt;
+    font-size: 8pt;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: #4f46e5;
-    margin: 6px 0 4px;
-    padding: 1px 0 1px 7px;
-    border-left: 3px solid #4f46e5;
-    background: linear-gradient(to right, #eef2ff 0%, transparent 80%);
+    letter-spacing: 2px;
+    margin: 5px 0 3px;
+    border-bottom: 1px solid #111;
+    padding-bottom: 1px;
   }
 
-  /* --- Two-column layout --- */
+  /* SKILL ROWS — plain text */
+  .skill-row { display: flex; gap: 6px; margin-bottom: 2px; font-size: 8.5pt; }
+  .skill-row .cat { font-weight: 700; min-width: 80px; flex-shrink: 0; }
+  .skill-row .vals { color: #222; }
+
+  /* ENTRIES */
+  .entry { margin-bottom: 4px; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry-header b { font-size: 9pt; font-weight: 700; }
+  .entry-header .meta { font-size: 8pt; color: #444; white-space: nowrap; margin-left: 6px; }
+  .entry .sub { font-size: 8pt; color: #555; font-style: italic; }
+  .entry p { font-size: 8.5pt; color: #222; margin-top: 1px; line-height: 1.4; }
+  .entry .tags { font-size: 7.5pt; color: #555; margin-top: 1px; }
+
+  /* TWO-COL */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
 
-  /* --- Entry rows --- */
-  .entry { margin-bottom: 5px; }
-  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
-  .entry-header b { font-size: 9pt; font-weight: 700; color: #0f172a; }
-  .entry-header .meta { font-size: 8pt; color: #64748b; white-space: nowrap; margin-left: 6px; }
-  .entry .sub { font-size: 8.5pt; color: #475569; }
-  .entry p { font-size: 8.5pt; color: #374151; margin-top: 2px; line-height: 1.5; }
-  .entry .tags { margin-top: 3px; display: flex; flex-wrap: wrap; gap: 2px; }
-  .entry .tags span {
-    background: #eef2ff; color: #4f46e5;
-    border: 1px solid #c7d2fe; border-radius: 3px;
-    padding: 0 5px; font-size: 7.5pt; font-weight: 600;
-  }
-
-  /* --- Skills pill rows --- */
-  .skill-row { display: flex; align-items: flex-start; gap: 6px; margin-bottom: 3px; }
-  .skill-row .cat { font-size: 8pt; font-weight: 700; color: #334155; min-width: 82px; padding-top: 1px; flex-shrink: 0; }
-  .skill-row .pills { display: flex; flex-wrap: wrap; gap: 2px; }
-  .pill { background: #f8fafc; color: #1e293b; border: 1px solid #cbd5e1; border-radius: 3px; padding: 0 4px; font-size: 7.5pt; font-weight: 500; }
-  .pill.hi { background: #eef2ff; color: #4338ca; border-color: #c7d2fe; font-weight: 600; }
-
-  /* --- Achievements list --- */
+  /* BULLET LIST */
   ul.bullet { padding-left: 14px; margin: 0; }
-  ul.bullet li { font-size: 8.5pt; color: #374151; margin-bottom: 1px; }
+  ul.bullet li { font-size: 8.5pt; color: #222; margin-bottom: 1px; list-style-type: '-  '; }
 
-  /* --- Interests chips --- */
-  .interests { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 2px; }
-  .interests span {
-    background: #f1f5f9; color: #334155;
-    border: 1px solid #cbd5e1; border-radius: 3px;
-    padding: 0 5px; font-size: 8pt;
-  }
+  /* INTERESTS */
+  .interests { font-size: 8.5pt; color: #222; }
 
-  /* --- Print --- */
   @media print {
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page { margin: 0; }
-    a { color: #1a56db !important; }
   }
 </style>
 </head>
 <body>
 <div class="page">
-<div class="top-pad"></div>
 
   <!-- HEADER -->
   <div class="header">
-    <div class="header-left">
-      <h1>Akshansh Yadav</h1>
-      <div class="role">Full-Stack &amp; Web3 Developer &nbsp;·&nbsp; Independent Builder &nbsp;·&nbsp; Open to Internships</div>
-    </div>
-    <div class="header-right">
-      <a href="mailto:250102005@HBTU.AC.IN">250102005@HBTU.AC.IN</a><br>
-      <a href="https://linkedin.com/in/akshansh-yadav-554926304" target="_blank">linkedin.com/in/akshansh-yadav-554926304</a><br>
-      <a href="https://github.com/expediator" target="_blank">github.com/expediator</a> &nbsp;·&nbsp;
-      <a href="https://x.com/expediator_" target="_blank">x.com/expediator_</a><br>
-      <a href="https://expediator.github.io/resume/" target="_blank">expediator.github.io/resume</a>
+    <h1>Akshansh Yadav</h1>
+    <div class="role">Full-Stack &amp; Web3 Developer &nbsp;|&nbsp; Independent Builder &nbsp;|&nbsp; Open to Internships</div>
+    <div class="contacts">
+      <span><a href="mailto:250102005@HBTU.AC.IN">250102005@HBTU.AC.IN</a></span>
+      <span>|</span>
+      <span><a href="mailto:akshanshyadav26220.dpskln@gmail.com">akshanshyadav26220.dpskln@gmail.com</a></span>
+      <span>|</span>
+      <span><a href="https://linkedin.com/in/akshansh-yadav-554926304">linkedin/akshansh-yadav</a></span>
+      <span>|</span>
+      <span><a href="https://github.com/expediator">github/expediator</a></span>
+      <span>|</span>
+      <span><a href="https://expediator.github.io/resume/">portfolio</a></span>
     </div>
   </div>
-
-  <hr>
-
-  <!-- SUMMARY -->
-  <p style="font-size:8.5pt;color:#374151;margin-bottom:4px;">
-    Building at the intersection of TypeScript, Web3, and embedded systems. Shipped <strong style="color:#0f172a;">SwapX</strong> (live CEX+DEX · Next.js 14 · Redis), <strong style="color:#0f172a;">FaceMetrics</strong> (468-landmark CV · 100% in-browser), and a gesture+voice RC car (ESP32 · MediaPipe · Vosk). Exploring Solana, CI/CD, and distributed systems.
-  </p>
 
   <hr>
 
   <!-- SKILLS -->
   <div class="section-title">Skills</div>
   <div class="skill-row">
-    <span class="cat">Languages</span>
-    <div class="pills">
-      <span class="pill hi">TypeScript</span><span class="pill hi">JavaScript</span><span class="pill hi">Python</span><span class="pill">C</span><span class="pill">SQL</span><span class="pill">Rust</span><span class="pill">Solidity</span>
-    </div>
+    <span class="cat">Languages:</span>
+    <span class="vals">TypeScript, JavaScript, Python, C, SQL, Rust, Solidity</span>
   </div>
   <div class="skill-row">
-    <span class="cat">Tools &amp; Tech</span>
-    <div class="pills">
-      <span class="pill hi">Next.js 14</span><span class="pill hi">React</span><span class="pill hi">Redis</span><span class="pill hi">NextAuth</span><span class="pill">Node.js</span><span class="pill">Tailwind CSS</span><span class="pill">Git · GitHub</span><span class="pill">Arduino IDE</span>
-    </div>
+    <span class="cat">Tools &amp; Tech:</span>
+    <span class="vals">Next.js 14, React, Redis (Upstash), NextAuth.js, Node.js, Tailwind CSS, Git, Railway, Arduino IDE</span>
   </div>
   <div class="skill-row">
-    <span class="cat">Libraries</span>
-    <div class="pills">
-      <span class="pill">OpenCV</span><span class="pill">MediaPipe</span><span class="pill">Canvas API</span><span class="pill">pandas</span><span class="pill">pygame</span><span class="pill">Kivy</span><span class="pill">yfinance</span>
-    </div>
+    <span class="cat">Libraries:</span>
+    <span class="vals">OpenCV, MediaPipe, Canvas API, pandas, pygame, Kivy, yfinance</span>
   </div>
   <div class="skill-row">
-    <span class="cat">Core Areas</span>
-    <div class="pills">
-      <span class="pill hi">Full-Stack Web</span><span class="pill hi">REST API Design</span><span class="pill">Computer Vision</span><span class="pill">Embedded Systems</span><span class="pill">DBMS</span>
-    </div>
+    <span class="cat">Core Areas:</span>
+    <span class="vals">Full-Stack Web, REST API Design, Computer Vision, Embedded Systems, DBMS</span>
   </div>
   <div class="skill-row">
-    <span class="cat">Exploring</span>
-    <div class="pills">
-      <span class="pill">Solana</span><span class="pill">Ethereum</span><span class="pill">Smart Contracts</span><span class="pill">CI/CD</span><span class="pill">Cloud &amp; Containers</span>
-    </div>
+    <span class="cat">Exploring:</span>
+    <span class="vals">Solana, Ethereum, Smart Contracts, CI/CD, Docker, Cloud &amp; Containers</span>
   </div>
 
-  <hr>
+  <hr class="thin">
 
   <!-- PROJECTS -->
   <div class="section-title">Projects</div>
@@ -167,50 +132,50 @@
   <div class="entry">
     <div class="entry-header">
       <b>SwapX — CEX + DEX Crypto Exchange</b>
-      <span class="meta">2026 · <a href="https://easygoing-motivation-production.up.railway.app" target="_blank">Live →</a> · <a href="https://github.com/expediator/swapx-dex" target="_blank">github.com/expediator/swapx-dex</a></span>
+      <span class="meta">2026 | <a href="https://easygoing-motivation-production.up.railway.app">Live</a> | <a href="https://github.com/expediator/swapx-dex">github/swapx-dex</a></span>
     </div>
-    <p>Shipped a full-stack trading platform: <strong>CEX</strong> order-book (market + limit orders, 0.1% fee) and <strong>DEX</strong> AMM swaps (0.3% fee, slippage) for <strong>30+ tokens</strong>. Real-time CoinGecko prices cached in Upstash Redis (60s TTL); Google OAuth login; per-user portfolio + transaction history stored in Redis Hashes/Lists. Deployed on Render.</p>
-    <div class="tags"><span>Next.js 14</span><span>TypeScript</span><span>Upstash Redis</span><span>NextAuth</span><span>Tailwind CSS</span><span>CoinGecko API</span><span>Web3</span></div>
+    <p>Full-stack crypto trading platform: CEX order-book (market + limit orders, 0.1% fee) and DEX AMM swaps (0.3% fee, slippage) for 30+ tokens. Real-time CoinGecko prices in Upstash Redis (60s TTL); Google OAuth; per-user portfolio and trade history in Redis. Deployed on Railway.</p>
+    <div class="tags">Next.js 14 | TypeScript | Upstash Redis | NextAuth | Tailwind CSS | CoinGecko API | Web3</div>
   </div>
 
   <div class="entry">
     <div class="entry-header">
       <b>Hand Gesture &amp; Voice Controlled RC Car</b>
-      <span class="meta">2025 · <a href="https://github.com/expediator/gesture-controlled-robot" target="_blank">github.com/expediator/gesture-controlled-robot</a></span>
+      <span class="meta">2025 | <a href="https://github.com/expediator/gesture-controlled-robot">github/gesture-robot</a></span>
     </div>
-    <p>Built solo in <strong>4 weeks</strong>. Dual control: MediaPipe hand gestures via webcam + Vosk offline speech recognition (English + Hindi), both relayed over UDP to ESP32. Designed full circuit from scratch: L298N motor driver, HC-SR04 ultrasonic obstacle sensor, LiPo power management.</p>
-    <div class="tags"><span>Arduino/ESP32</span><span>OpenCV</span><span>MediaPipe</span><span>Vosk</span><span>UDP</span><span>Embedded C</span></div>
+    <p>Built solo in 4 weeks. MediaPipe hand gestures via webcam + Vosk offline speech recognition (English + Hindi), both relayed over UDP to ESP32. Designed full circuit: L298N motor driver, HC-SR04 ultrasonic obstacle sensor, LiPo power management.</p>
+    <div class="tags">Arduino/ESP32 | OpenCV | MediaPipe | Vosk | UDP | Embedded C</div>
   </div>
 
   <div class="entry">
     <div class="entry-header">
       <b>FaceMetrics — AI Facial Geometry Analysis</b>
-      <span class="meta">2026 · <a href="https://expediator.github.io/face-rater/" target="_blank">Try live →</a> · <a href="https://github.com/expediator/face-rater" target="_blank">github.com/expediator/face-rater</a></span>
+      <span class="meta">2026 | <a href="https://expediator.github.io/face-rater/">Live</a> | <a href="https://github.com/expediator/face-rater">github/face-rater</a></span>
     </div>
-    <p>Evolved through <strong>16 versions</strong> (CLI → Tkinter GUI → browser app). Scores jaw, cheekbones, symmetry, eye area + 6 more metrics using <strong>468 MediaPipe FaceMesh landmarks</strong> — <strong>100% in-browser</strong>, no server. Webcam capture + auto-brightness enhancement for dark photos. Gender-specific dimorphism weighting.</p>
-    <div class="tags"><span>JavaScript</span><span>MediaPipe FaceMesh</span><span>Canvas API</span><span>Python</span><span>OpenCV</span></div>
+    <p>Evolved through 16 versions (CLI → Tkinter GUI → browser). Scores jaw, cheekbones, symmetry, eye area + 7 more metrics via 468 MediaPipe FaceMesh landmarks — 100% in-browser. Auto-brightness enhancement; gender-specific dimorphism weighting.</p>
+    <div class="tags">JavaScript | MediaPipe FaceMesh | Canvas API | Python | OpenCV</div>
   </div>
 
   <div class="two-col">
     <div class="entry">
       <div class="entry-header">
         <b>Space Shooter</b>
-        <span class="meta">2025 · <a href="https://expediator.github.io/space-shooter/" target="_blank">Play →</a> · <a href="https://github.com/expediator/space-shooter" target="_blank">GitHub</a></span>
+        <span class="meta">2025 | <a href="https://expediator.github.io/space-shooter/">Play</a></span>
       </div>
-      <p>2D arcade shooter rewritten from Python/pygame to <strong>pure JS Canvas</strong> — loads instantly in-browser. Thrust+inertia physics, two AI enemy types, power-up system, particle explosions, full HUD &amp; touch support.</p>
-      <div class="tags"><span>JavaScript</span><span>Canvas API</span><span>OOP</span><span>Python/pygame</span></div>
+      <p>2D arcade shooter rewritten from Python/pygame to pure JS Canvas — instant browser load. Thrust+inertia physics, two AI enemy types, power-ups, particle FX, touch support.</p>
+      <div class="tags">JavaScript | Canvas API | OOP | Python/pygame</div>
     </div>
     <div class="entry">
       <div class="entry-header">
-        <b>Interactive Portfolio (Windows-OS Style)</b>
-        <span class="meta">2025 · <a href="https://expediator.github.io/resume/" target="_blank">expediator.github.io/resume</a></span>
+        <b>Interactive Portfolio (Windows OS Style)</b>
+        <span class="meta">2025 | <a href="https://expediator.github.io/resume/">Live</a></span>
       </div>
-      <p>Draggable-window desktop resume with music player, GitHub heatmap, rotating wallpapers. Plain HTML/CSS/JS, deployed on GitHub Pages — zero frameworks.</p>
-      <div class="tags"><span>HTML/CSS/JS</span><span>GitHub Pages</span></div>
+      <p>Draggable-window desktop resume — music player, GitHub heatmap, wallpapers. Zero frameworks; pure HTML/CSS/JS on GitHub Pages.</p>
+      <div class="tags">HTML/CSS/JS | GitHub Pages</div>
     </div>
   </div>
 
-  <hr>
+  <hr class="thin">
 
   <!-- EXPERIENCE -->
   <div class="section-title">Experience</div>
@@ -218,9 +183,9 @@
   <div class="entry">
     <div class="entry-header">
       <b>Founding Member &amp; Social Media Lead</b> — Simbha Kunj Foundation (NGO)
-      <span class="meta">Feb 2021 – Present · Kanpur</span>
+      <span class="meta">Feb 2021 – Present | Kanpur</span>
     </div>
-    <p>Co-founded an animal welfare and student support NGO. Led social media strategy and content planning, growing community outreach and engagement.</p>
+    <p>Co-founded animal welfare + student support NGO. Led social media strategy and community outreach.</p>
   </div>
 
   <div class="two-col">
@@ -229,54 +194,53 @@
         <b>Social &amp; Outreach Head</b> — YouTube Channel
         <span class="meta">Oct 2025 – Present</span>
       </div>
-      <p>Drove audience growth strategy and content positioning; improved viewer engagement and channel reach.</p>
+      <p>Grew audience via content positioning and engagement strategy.</p>
     </div>
     <div class="entry">
       <div class="entry-header">
         <b>Independent — E-Commerce &amp; Dropshipping</b>
         <span class="meta">2024 – 2025</span>
       </div>
-      <p>Built knowledge of product sourcing, digital marketing funnels, and data-driven sales performance.</p>
+      <p>Product sourcing, digital marketing funnels, and data-driven sales analysis.</p>
     </div>
   </div>
 
-  <hr>
+  <hr class="thin">
 
-  <!-- EDUCATION + ACHIEVEMENTS side by side -->
+  <!-- EDUCATION + ACHIEVEMENTS -->
   <div class="two-col">
     <div>
       <div class="section-title">Education</div>
       <div class="entry">
         <div class="entry-header"><b>B.Tech — HBTU Kanpur</b><span class="meta">Aug 2025 – Apr 2029</span></div>
-        <div class="sub">Harcourt Butler Technical University, Kanpur</div>
+        <div class="sub">Harcourt Butler Technical University</div>
       </div>
       <div class="entry">
-        <div class="entry-header"><b>Class XII</b><span class="meta">2024 · 85% overall · 88% best 5</span></div>
+        <div class="entry-header"><b>Class XII</b><span class="meta">2024 · 85% overall</span></div>
       </div>
       <div class="entry">
-        <div class="entry-header"><b>Class X</b><span class="meta">2022 · 93.6% overall · 94.6% best 5</span></div>
+        <div class="entry-header"><b>Class X</b><span class="meta">2022 · 93.6% overall</span></div>
       </div>
     </div>
     <div>
       <div class="section-title">Achievements</div>
       <ul class="bullet">
-        <li>Qualified JEE Mains 2024 &amp; 2025</li>
-        <li>Appeared for JEE Advanced 2024 &amp; 2025</li>
-        <li>SOF Olympiads (Class 11) — English: Intl. Rank 240 · Science: 1084 · Maths: 3872</li>
+        <li>Qualified JEE Mains 2024 &amp; 2025; JEE Advanced 2024 &amp; 2025</li>
+        <li>SOF Olympiads (Class 11) — English: Intl. Rank 240</li>
         <li>RC Plane Development — design, assembly &amp; flight testing</li>
+        <li>Co-Founded Simbha Kunj Foundation (NGO)</li>
       </ul>
     </div>
   </div>
 
-  <hr>
+  <hr class="thin">
 
   <!-- INTERESTS -->
   <div class="section-title">Interests</div>
   <div class="interests">
-    <span>Web3 &amp; DeFi</span><span>Blockchain Infrastructure</span><span>Solana</span><span>Ethereum</span>
-    <span>Smart Contracts</span><span>Full-Stack Dev</span><span>REST APIs</span>
-    <span>DevOps &amp; CI/CD</span><span>Cloud &amp; Containers</span>
-    <span>Computer Vision</span><span>Embedded Systems</span><span>Open Source</span><span>AI &amp; LLMs</span>
+    Web3 &amp; DeFi &nbsp;|&nbsp; Blockchain Infrastructure &nbsp;|&nbsp; Solana &amp; Ethereum &nbsp;|&nbsp;
+    Full-Stack Dev &nbsp;|&nbsp; REST API Design &nbsp;|&nbsp; DevOps &amp; CI/CD &nbsp;|&nbsp;
+    Computer Vision &nbsp;|&nbsp; Embedded Systems &nbsp;|&nbsp; Open Source &nbsp;|&nbsp; AI &amp; LLMs
   </div>
 
 </div>
