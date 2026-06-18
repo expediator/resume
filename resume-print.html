@@ -10,10 +10,10 @@
 
   body {
     font-family: 'Courier Prime', 'Courier New', monospace;
-    font-size: 9pt;
+    font-size: 8.5pt;
     color: #111;
     background: #fff;
-    line-height: 1.4;
+    line-height: 1.35;
   }
 
   a { color: #1a56db; text-decoration: underline; }
@@ -22,61 +22,62 @@
     width: 210mm;
     min-height: 297mm;
     max-height: 297mm;
-    padding: 11mm 14mm 8mm;
+    padding: 9mm 13mm 7mm;
     margin: 0 auto;
     overflow: hidden;
   }
 
   /* HEADER */
-  .header { text-align: center; margin-bottom: 5px; }
-  .header h1 { font-size: 17pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
-  .header .role { font-size: 8.5pt; color: #333; margin: 1px 0 3px; letter-spacing: .5px; }
-  .header .contacts { font-size: 8pt; color: #222; }
-  .header .contacts span { margin: 0 4px; }
+  .header { text-align: center; margin-bottom: 4px; }
+  .header h1 { font-size: 15pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  .header .role { font-size: 8pt; color: #333; margin: 1px 0 2px; letter-spacing: .5px; }
+  .header .contacts { font-size: 7.5pt; color: #222; }
+  .header .contacts span { margin: 0 3px; }
 
   /* DIVIDER */
-  hr { border: none; border-top: 1px solid #111; margin: 4px 0; }
-  hr.thin { border-top: 1px dotted #999; margin: 3px 0; }
+  hr { border: none; border-top: 1px solid #111; margin: 3px 0; }
+  hr.thin { border-top: 1px dotted #999; margin: 2px 0; }
 
   /* SECTION TITLES */
   .section-title {
-    font-size: 8pt;
+    font-size: 7.5pt;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 5px 0 3px;
+    margin: 4px 0 2px;
     border-bottom: 1px solid #111;
     padding-bottom: 1px;
   }
 
   /* SKILL ROWS */
-  .skill-row { display: flex; gap: 6px; margin-bottom: 2px; font-size: 8.5pt; }
-  .skill-row .cat { font-weight: 700; min-width: 82px; flex-shrink: 0; }
+  .skill-row { display: flex; gap: 5px; margin-bottom: 1.5px; font-size: 8pt; }
+  .skill-row .cat { font-weight: 700; min-width: 80px; flex-shrink: 0; }
   .skill-row .vals { color: #222; }
 
   /* ENTRIES */
-  .entry { margin-bottom: 4px; }
+  .entry { margin-bottom: 3px; }
   .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
-  .entry-header b { font-size: 9pt; font-weight: 700; }
-  .entry-header .meta { font-size: 8pt; color: #444; white-space: nowrap; margin-left: 6px; }
-  .entry .sub { font-size: 8pt; color: #555; font-style: italic; }
-  .entry p { font-size: 8.5pt; color: #222; margin-top: 1px; line-height: 1.4; }
-  .entry .tags { font-size: 7.5pt; color: #555; margin-top: 1px; }
+  .entry-header b { font-size: 8.5pt; font-weight: 700; }
+  .entry-header .meta { font-size: 7.5pt; color: #444; white-space: nowrap; margin-left: 6px; }
+  .entry .sub { font-size: 7.5pt; color: #555; font-style: italic; }
+  .entry p { font-size: 8pt; color: #222; margin-top: 0; line-height: 1.35; }
+  .entry .tags { font-size: 7pt; color: #555; margin-top: 0.5px; }
 
   /* TWO-COL */
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
 
   /* BULLET LIST */
-  ul.bullet { padding-left: 14px; margin: 0; }
-  ul.bullet li { font-size: 8.5pt; color: #222; margin-bottom: 1px; }
+  ul.bullet { padding-left: 12px; margin: 0; }
+  ul.bullet li { font-size: 8pt; color: #222; margin-bottom: 0.5px; }
 
   /* INTERESTS */
-  .interests { font-size: 8.5pt; color: #222; }
+  .interests { font-size: 8pt; color: #222; }
 
   @media print {
+    @page { margin: 0; size: A4 portrait; }
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page { margin: 0; }
-    a { color: #1a56db !important; }
+    a { color: #1a56db !important; text-decoration: underline !important; }
   }
 </style>
 </head>
@@ -143,7 +144,7 @@
       <b>SwapX — CEX + DEX Crypto Exchange</b>
       <span class="meta">2026 &nbsp;|&nbsp; <a href="https://easygoing-motivation-production.up.railway.app">Live ↗</a> &nbsp;|&nbsp; <a href="https://github.com/expediator/swapx-dex">github/swapx-dex ↗</a></span>
     </div>
-    <p>Full-stack trading platform: CEX order-book (market + limit orders, 0.1% fee) and DEX AMM swaps (constant-product formula, 0.3% fee + slippage) for 30+ tokens. CoinGecko prices cached in Upstash Redis (60s TTL); Google OAuth via NextAuth; per-user portfolio + trade history in Redis Hashes/Lists. Deployed on Railway.</p>
+    <p>Full-stack trading platform: CEX order-book (market + limit, 0.1% fee) and DEX AMM swaps (constant-product, 0.3% + slippage) for 30+ tokens. CoinGecko prices cached in Upstash Redis (60s TTL); Google OAuth via NextAuth.js; per-user portfolio + trade history in Redis Hashes/Lists.</p>
     <div class="tags">Next.js 14 · TypeScript · Upstash Redis · NextAuth.js · Zod · Recharts · Tailwind CSS · CoinGecko API · Railway</div>
   </div>
 
@@ -152,7 +153,7 @@
       <b>Hand Gesture &amp; Voice Controlled RC Car</b>
       <span class="meta">2025 &nbsp;|&nbsp; <a href="https://github.com/expediator/gesture-controlled-robot">github/gesture-robot ↗</a></span>
     </div>
-    <p>Built solo in 4 weeks. Dual-mode control: MediaPipe hand-landmark gestures via webcam + Vosk offline speech-to-text (English + Hindi), both relayed over UDP sockets to ESP32. Designed full circuit from scratch: L298N motor driver, HC-SR04 ultrasonic sensor, LiPo power rail.</p>
+    <p>Built solo in 4 weeks. Dual-mode: MediaPipe hand-landmark gestures (webcam) + Vosk offline STT (English + Hindi), relayed over UDP to ESP32. Full circuit from scratch: L298N motor driver, HC-SR04 ultrasonic, LiPo power rail.</p>
     <div class="tags">ESP32 · Arduino (Embedded C) · OpenCV · MediaPipe · Vosk · NumPy · UDP</div>
   </div>
 
@@ -161,7 +162,7 @@
       <b>FaceMetrics — AI Facial Geometry Analysis</b>
       <span class="meta">2026 &nbsp;|&nbsp; <a href="https://expediator.github.io/face-rater/">Live ↗</a> &nbsp;|&nbsp; <a href="https://github.com/expediator/face-rater">github/face-rater ↗</a></span>
     </div>
-    <p>Evolved through 16 iterations (Python CLI → Tkinter GUI → browser app). Scores 11 facial metrics (jaw width, cheekbone ratio, symmetry, eye area, chin projection, etc.) via 468 MediaPipe FaceMesh landmarks — 100% in-browser, zero server. Webcam capture + auto-brightness enhancement; gender-specific dimorphism weighting.</p>
+    <p>16 iterations (Python CLI → Tkinter GUI → browser). Scores 11 facial metrics via 468 MediaPipe FaceMesh landmarks — 100% in-browser, zero server. Webcam + auto-brightness enhancement; gender-specific dimorphism weighting.</p>
     <div class="tags">JavaScript · MediaPipe FaceMesh · Canvas API · Python · OpenCV · NumPy</div>
   </div>
 
@@ -171,7 +172,7 @@
         <b>Space Shooter</b>
         <span class="meta">2025 &nbsp;|&nbsp; <a href="https://expediator.github.io/space-shooter/">Play ↗</a> &nbsp;|&nbsp; <a href="https://github.com/expediator/space-shooter">GitHub ↗</a></span>
       </div>
-      <p>2D arcade shooter rewritten from Python/pygame → pure JS Canvas; loads instantly in any browser. Thrust+inertia physics, two AI enemy types, power-up system, particle FX, touch support.</p>
+      <p>2D arcade shooter: Python/pygame → pure JS Canvas. Thrust+inertia physics, two AI enemy types, power-ups, particle FX, touch support.</p>
       <div class="tags">JavaScript · Canvas API · OOP · Python/pygame</div>
     </div>
     <div class="entry">
@@ -179,7 +180,7 @@
         <b>Interactive Portfolio (Windows OS Style)</b>
         <span class="meta">2025 &nbsp;|&nbsp; <a href="https://expediator.github.io/resume/">Live ↗</a></span>
       </div>
-      <p>Draggable-window desktop resume — music player, GitHub heatmap, rotating wallpapers. Pure HTML/CSS/JS, zero frameworks, on GitHub Pages.</p>
+      <p>Draggable-window desktop resume — music player, GitHub heatmap, rotating wallpapers. Pure HTML/CSS/JS, zero frameworks.</p>
       <div class="tags">HTML · CSS · JavaScript · GitHub Pages</div>
     </div>
   </div>
