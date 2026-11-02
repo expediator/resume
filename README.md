@@ -1,84 +1,75 @@
-# Akshansh Yadav — Resume (Windows-OS style)
+<div align="center">
 
-🔗 **Live:** https://expediator.github.io/resume/
+# 🖥️ Akshansh Yadav — Interactive Resume
 
-An interactive resume styled as a Windows desktop — clickable, draggable popup
-windows with real `–  ▢  ✕` window controls, a taskbar with pinned apps and a
-live clock, rotating wallpapers, and a music player that autoplays a rotating
-royalty-free library on open.
+**Windows-OS style interactive portfolio**
+
+[![Live](https://img.shields.io/badge/View_Live-GitHub_Pages-3b9eff?style=flat-square&logo=github)](https://expediator.github.io/resume/)
+[![GitHub](https://img.shields.io/badge/GitHub-expediator%2Fresume-181717?style=flat-square&logo=github)](https://github.com/expediator/resume)
+[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+An interactive resume styled as a Windows desktop. Draggable popup windows, live taskbar, rotating wallpapers, music player, and live GitHub stats — all in plain HTML/CSS/JS. No build step.
+
+</div>
+
+---
+
+## Live
+
+**[expediator.github.io/resume](https://expediator.github.io/resume/)**
+
+---
 
 ## Features
-- Desktop icons (6-column grid) + taskbar open draggable, closable "windows"
-  for Profile, GitHub Contributions/Stats, Education, Skills, Projects,
-  Experience, Achievements, Interests, Contact & Music Library.
-- Auto-playing music player (play/pause, skip, mute) cycling a 21-track
-  royalty-free library, each one credited.
-- **Music Library** window: an embedded Spotify playlist + a YouTube
-  shortlist, plus a search box for both (paste a link to play inline, or
-  type a query to open search on that platform).
-- Rotating desktop wallpapers (auto every 60s, or pick one from the top-left
-  tab bar) — each one shifts the site's accent color.
-- Live GitHub contribution heatmap + stats card, with a 🔄 refresh button
-  next to each (the underlying images get cached, so refreshing re-stamps
-  them with a fresh timestamp instead of waiting on the cache to expire).
-- No build step — plain HTML/CSS/JS.
 
-## Skills
-*(Pulled from what's actually listed in the Skills/Interests windows — see
-[How to add a new skill or experience](#how-to-add-a-new-skill-or-experience)
-to update this list.)*
+- **Draggable windows** with real `– ▢ ✕` controls (minimize / maximize / close)
+- **Windows**: Profile · GitHub Stats · Education · Skills · Projects · Experience · Achievements · Interests · Contact · Music Library
+- **Music player** — 21-track royalty-free library, autoplays, skip/mute controls
+- **Music Library** — embedded Spotify playlist + YouTube shortlist + search box for both
+- **Rotating wallpapers** — 5 themes; each shifts the site accent color
+- **Live GitHub stats** — contribution heatmap + streak + stats cards with 🔄 refresh
+- **No build step** — plain HTML/CSS/JS, open `index.html` and it works
 
-| Category | Skills |
-|---|---|
-| **Frontend** | JavaScript, TypeScript, HTML/CSS |
-| **Backend** | Python, C, SQL, Node.js |
-| **DevOps & Tools** | Git, GitHub, MS Excel, Arduino IDE |
-| **Frameworks & Libraries** | OpenCV, MediaPipe, Tkinter |
-| **Currently exploring (Web3)** | Solidity, Rust, Solana, Ethereum, Smart Contracts, CI/CD, Cloud & Containers |
+## File Map
 
-## File map
-| File | Controls |
-|---|---|
-| `index.html` | All content & structure — profile text, every window's text, taskbar buttons, links |
-| `style.css` | All visual styling — colors, layout, fonts, animations |
-| `script.js` | All behavior — opening/closing/dragging windows, music player, wallpaper rotation, search |
+| File | Purpose |
+|------|---------|
+| `index.html` | All content, structure, every window's text |
+| `style.css` | All visual styling |
+| `script.js` | All behavior — drag/drop, music, wallpapers, search |
 
-Every major block in all three files is tagged with a searchable comment in
-the form `# SECTION: NAME` (`<!-- # SECTION: ... -->` in HTML, `/* # SECTION:
-... */` in CSS, `// # SECTION: ...` in JS). In VS Code, press **Ctrl+Shift+F**
-(search across all files) and type `# SECTION:` to see the full map, or
-**Ctrl+F** inside one file to jump straight to a section, e.g. searching
-`WINDOW - SKILLS` jumps right to the Skills window's markup.
+Every section tagged `# SECTION: NAME` — Ctrl+Shift+F in VS Code → search `# SECTION:` to navigate.
 
-## How to add a new skill or experience
-1. Open the project folder in VS Code.
-2. **Ctrl+Shift+F** → search `# SECTION: WINDOW - SKILLS` (or `EXPERIENCE`,
-   `PROJECTS`, `ACHIEVEMENTS`, `INTERESTS`, etc.) — this is in `index.html`.
-3. Each item lives inside a `<div class="entry">...</div>` (or `<span>` for
-   tags in Skills/Interests). Copy an existing one and edit the text, or
-   just edit the text in place.
-4. Save the file.
-5. Either ask Claude to commit + push it, or do it yourself:
-   ```
-   git add -A
-   git commit -m "Update skills/experience"
-   git push
-   ```
-6. **Important:** if you edit `script.js` or `style.css`, bump the `?v=N`
-   query string on their `<link>`/`<script>` tags in `index.html` (search
-   `# SECTION:` near the top) — otherwise visitors' browsers may keep
-   serving an old cached copy instead of your update.
+## How to Update Content
 
-Don't rename a window's `id="win-NAME"` without also updating its matching
-`data-win="NAME"` on the desktop icon and taskbar button — those three have
-to match for the click-to-open behavior to work.
+1. Open `index.html` in VS Code
+2. Ctrl+Shift+F → `# SECTION: WINDOW - PROJECTS` (or SKILLS, EXPERIENCE, etc.)
+3. Edit `<div class="entry">` blocks → save → push
 
-## Music credits
-- "Tenderness" & "Sweet" — [Bensound.com](https://www.bensound.com) (royalty-free, attribution required)
-- "Funkorama" — Kevin MacLeod ([incompetech.com](https://incompetech.com)), licensed [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-- "Lost Myself" — Lalanne, "Higher Water" — Blue Deer Studio, "Gone Away" — Blue Beat Review
-- 15 additional tracks — [Bensound.com](https://www.bensound.com) (royalty-free, attribution required)
-- Spotify playlist and YouTube videos are streamed via official embeds; rights belong to their respective owners.
+```bash
+git add index.html && git commit -m "update: <what changed>" && git push
+```
 
-## Run locally
-Just open `index.html` in a browser — no dependencies, no build step.
+> ⚠️ If you edit `script.js` or `style.css`, bump the `?v=N` cache-buster on their tags in `index.html`.
+
+## Run Locally
+
+```bash
+open index.html          # macOS
+start index.html         # Windows
+npx serve .              # any platform
+```
+
+## Music Credits
+
+- "Tenderness", "Sweet" & 15 more — [Bensound.com](https://www.bensound.com) (royalty-free, attribution required)
+- "Funkorama" — Kevin MacLeod ([incompetech.com](https://incompetech.com)), [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+- Spotify / YouTube content streamed via official embeds; rights belong to respective owners
+
+---
+
+<div align="center">
+<strong>Expediator Inc.</strong> · © 2026 · <a href="https://github.com/expediator">GitHub</a>
+</div>
