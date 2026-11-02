@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akshansh Yadav — Resume</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --section-gap: 18px;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 10pt;
+    line-height: 1.5;
+    color: var(--text);
+    background: #f9fafb;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: white;
+    padding: 14mm 16mm 14mm 16mm;
+  }
+
+  /* ── Header ── */
+  .header { border-bottom: 2px solid var(--accent); padding-bottom: 12px; margin-bottom: 16px; }
+  .header h1 { font-size: 22pt; font-weight: 700; color: var(--accent); letter-spacing: -0.5px; }
+  .header .role { font-size: 11pt; color: var(--muted); font-weight: 500; margin-top: 2px; }
+  .header .links {
+    display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px;
+    font-size: 8.5pt; color: var(--muted);
+  }
+  .header .links a { color: var(--accent); text-decoration: none; }
+  .header .links span::before { content: '·'; margin-right: 14px; color: var(--border); }
+  .header .links span:first-child::before { display: none; }
+
+  /* ── Sections ── */
+  .section { margin-bottom: var(--section-gap); }
+  .section-title {
+    font-size: 9pt; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--accent);
+    border-bottom: 1px solid var(--border); padding-bottom: 3px; margin-bottom: 10px;
+  }
+
+  /* ── Summary ── */
+  .summary p { color: var(--text); font-size: 9.5pt; }
+
+  /* ── Education ── */
+  .edu-item, .exp-item { margin-bottom: 10px; }
+  .edu-item:last-child, .exp-item:last-child { margin-bottom: 0; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .row .title { font-weight: 600; font-size: 10pt; }
+  .row .date { font-size: 8.5pt; color: var(--muted); white-space: nowrap; }
+  .subtitle { font-size: 9pt; color: var(--muted); }
+  .grade { font-size: 8.5pt; color: var(--accent); margin-top: 1px; }
+
+  /* ── Skills ── */
+  .skills-grid { display: grid; grid-template-columns: 130px 1fr; gap: 5px 12px; }
+  .skill-label { font-weight: 600; font-size: 9pt; color: var(--text); padding-top: 1px; }
+  .skill-val { font-size: 9pt; color: var(--muted); }
+
+  /* ── Projects ── */
+  .project { margin-bottom: 11px; }
+  .project:last-child { margin-bottom: 0; }
+  .project .proj-header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .project .proj-name { font-weight: 700; font-size: 10pt; }
+  .project .proj-links { font-size: 8pt; color: var(--muted); white-space: nowrap; }
+  .project .proj-links a { color: var(--accent); text-decoration: none; }
+  .project .proj-stack { font-size: 8pt; color: var(--accent); font-weight: 500; margin: 2px 0; }
+  .project .proj-desc { font-size: 9pt; color: var(--muted); }
+  .project .proj-desc li { margin-left: 14px; }
+
+  /* ── Experience ── */
+  .exp-desc { font-size: 9pt; color: var(--muted); margin-top: 2px; }
+
+  /* ── Achievements ── */
+  .ach-list { list-style: none; }
+  .ach-list li { font-size: 9pt; color: var(--muted); padding-left: 14px; position: relative; margin-bottom: 3px; }
+  .ach-list li::before { content: '▸'; color: var(--accent); position: absolute; left: 0; }
+
+  /* ── Two column layout ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+
+  /* ── Footer ── */
+  .footer { text-align: center; font-size: 7.5pt; color: var(--border); margin-top: 14px; border-top: 1px solid var(--border); padding-top: 8px; }
+
+  /* ── Print ── */
+  @media print {
+    body { background: white; }
+    .page { margin: 0; padding: 12mm 14mm; box-shadow: none; width: 100%; min-height: unset; }
+    a { color: inherit !important; }
+    .no-print { display: none !important; }
+  }
+
+  /* ── Print button ── */
+  .print-btn {
+    display: block; margin: 20px auto 0; padding: 10px 28px;
+    background: var(--accent); color: white; border: none; border-radius: 6px;
+    font-size: 10pt; font-weight: 600; cursor: pointer; width: fit-content;
+  }
+  .print-btn:hover { background: #1d4ed8; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Akshansh Yadav</h1>
+    <div class="role">Full-Stack & Web3 Developer · Independent Builder · Founder, Expediator Inc.</div>
+    <div class="links">
+      <span>📧 <a href="mailto:250102005@HBTU.AC.IN">250102005@HBTU.AC.IN</a></span>
+      <span>📧 <a href="mailto:akshanshyadav26220.dpskln@gmail.com">akshanshyadav26220.dpskln@gmail.com</a></span>
+      <span>🔗 <a href="https://linkedin.com/in/akshansh-yadav-554926304">LinkedIn</a></span>
+      <span>🐙 <a href="https://github.com/expediator">github.com/expediator</a></span>
+      <span>𝕏 <a href="https://x.com/expediator_">@expediator_</a></span>
+      <span>🌐 <a href="https://expediator.github.io/resume/">Portfolio</a></span>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section summary">
+    <div class="section-title">Summary</div>
+    <p>B.Tech Civil Engineering student and self-taught full-stack developer who ships. Founder of <strong>Expediator Inc.</strong> — built and deployed 5+ production applications across full-stack web, computer vision, embedded systems, and AI. Core stack: TypeScript, Next.js 16, React, Prisma, PostgreSQL, Groq AI. Exploring Web3 (Solana, Ethereum, Solidity) and AI/LLMs (Groq, Llama 3.3, RAG pipelines). Open to internships, freelance, and open-source collaborations.</p>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-item">
+      <div class="row">
+        <span class="title">B.Tech in Civil Engineering</span>
+        <span class="date">Aug 2025 – Apr 2029</span>
+      </div>
+      <div class="subtitle">Harcourt Butler Technical University (HBTU), Kanpur</div>
+    </div>
+    <div class="edu-item">
+      <div class="row">
+        <span class="title">Class XII — CBSE</span>
+        <span class="date">2024</span>
+      </div>
+      <div class="grade">85% Overall · 88% Best 5</div>
+    </div>
+    <div class="edu-item">
+      <div class="row">
+        <span class="title">Class X — CBSE</span>
+        <span class="date">2022</span>
+      </div>
+      <div class="grade">93.6% Overall · 94.6% Best 5</div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <span class="skill-label">Languages</span>
+      <span class="skill-val">TypeScript, JavaScript (ES2024), Python 3.12, C, C++, SQL, Solidity, Rust (learning), Bash</span>
+
+      <span class="skill-label">Frameworks</span>
+      <span class="skill-val">Next.js 16 (App Router), React 18, Node.js 22, Tailwind CSS v4, Express.js, Prisma ORM v5</span>
+
+      <span class="skill-label">Auth & Data</span>
+      <span class="skill-val">NextAuth v5, OAuth 2.0, JWT, Zod, Upstash Redis, PostgreSQL (Neon), REST API, WebSockets</span>
+
+      <span class="skill-label">AI & ML</span>
+      <span class="skill-val">Groq API (Llama 3.3 70B), PyTorch, HuggingFace, LangChain, FastAPI, ChromaDB, RAG Pipelines</span>
+
+      <span class="skill-label">CV & Embedded</span>
+      <span class="skill-val">OpenCV, MediaPipe FaceMesh, Vosk STT, NumPy, pandas, scikit-learn, Arduino/ESP32, Embedded C</span>
+
+      <span class="skill-label">DevOps & Infra</span>
+      <span class="skill-val">Git, GitHub, Vercel, Railway, GitHub Pages, GitHub Actions (learning), Docker (learning), Linux/Ubuntu</span>
+
+      <span class="skill-label">Web3</span>
+      <span class="skill-val">Solana, Ethereum, Solidity, ethers.js, Anchor Framework, DeFi / AMM mechanics</span>
+
+      <span class="skill-label">UI & Viz</span>
+      <span class="skill-val">shadcn/ui, Recharts, Lucide React, Canvas API, CoinGecko API</span>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Projects</div>
+
+    <div class="project">
+      <div class="proj-header">
+        <span class="proj-name">CareerVerse AI — AI Career Preparation Platform</span>
+        <span class="proj-links">
+          <a href="https://careerverse-ai-sigma.vercel.app">Live →</a>&nbsp;&nbsp;
+          <a href="https://github.com/expediator/careerverse-ai">GitHub →</a>
+        </span>
+      </div>
+      <div class="proj-stack">Next.js 16 · TypeScript · Tailwind v4 · NextAuth v5 · Prisma v5 · PostgreSQL (Neon) · Groq AI · Vercel · 2026</div>
+      <ul class="proj-desc">
+        <li>Full-stack AI-powered career prep platform — 36 dynamic routes, real DB persistence with Neon PostgreSQL</li>
+        <li>AI mock interviews (HR / Technical / Behavioral / Case) with real-time scoring and feedback via Groq Llama 3.3 70B</li>
+        <li>Domain labs for CS, Data Science, Cybersecurity, and Engineering; ATS resume analyzer with skill gap detection</li>
+        <li>Streaming AI assistant (SSE), aptitude test engine, communication coach, career path explorer</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="proj-header">
+        <span class="proj-name">SwapX — CEX + DEX Crypto Exchange</span>
+        <span class="proj-links">
+          <a href="https://easygoing-motivation-production.up.railway.app">Live →</a>&nbsp;&nbsp;
+          <a href="https://github.com/expediator/swapx-dex">GitHub →</a>
+        </span>
+      </div>
+      <div class="proj-stack">Next.js 14 · TypeScript · Upstash Redis · NextAuth v4 · Tailwind CSS · Railway · 2026</div>
+      <ul class="proj-desc">
+        <li>Full-stack crypto exchange combining CEX order-book interface and DEX AMM swap engine</li>
+        <li>30+ tokens (BTC, ETH, SOL, DeFi, stablecoins); real-time prices via CoinGecko API + Redis 60s cache</li>
+        <li>Per-user Redis portfolios, full transaction history, Google OAuth — no wallet required</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="proj-header">
+        <span class="proj-name">FaceMetrics — AI Facial Geometry Analysis</span>
+        <span class="proj-links">
+          <a href="https://expediator.github.io/face-rater/">Live →</a>&nbsp;&nbsp;
+          <a href="https://github.com/expediator/face-rater">GitHub →</a>
+        </span>
+      </div>
+      <div class="proj-stack">JavaScript · MediaPipe FaceMesh · Canvas API · Python · OpenCV · GitHub Pages · 2026</div>
+      <ul class="proj-desc">
+        <li>468-landmark 3D facial geometry analyzer — runs 100% in-browser, no server, no data uploaded</li>
+        <li>16-version evolution from CLI script → Tkinter GUI → full browser app; auto brightness enhancement</li>
+        <li>Gender-specific dimorphism weighting; file upload or live webcam capture</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="proj-header">
+        <span class="proj-name">Hand Gesture & Voice Controlled RC Car</span>
+        <span class="proj-links"><a href="https://github.com/expediator/gesture-controlled-robot">GitHub →</a></span>
+      </div>
+      <div class="proj-stack">Python · OpenCV · MediaPipe · Vosk STT · Embedded C · ESP32 · L298N · UDP · 2025</div>
+      <ul class="proj-desc">
+        <li>ESP32-based RC car controlled by laptop camera via MediaPipe hand gestures or Vosk offline voice commands</li>
+        <li>Designed full circuit (sensors, motor driver, power management); commands over UDP WiFi — 4-week solo build</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="proj-header">
+        <span class="proj-name">Plinth Civil Consultancy Website</span>
+        <span class="proj-links">
+          <a href="https://civil-site-gray.vercel.app">Live →</a>&nbsp;&nbsp;
+          <a href="https://github.com/expediator/civil-site">GitHub →</a>
+        </span>
+      </div>
+      <div class="proj-stack">Next.js 14 · TypeScript · Tailwind CSS · Web3Forms · Vercel · 2026</div>
+      <ul class="proj-desc">
+        <li>Professional consultancy site — 10 sections, pricing packages, Web3Forms contact, WhatsApp button, SEO meta tags</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+    <div class="exp-item">
+      <div class="row">
+        <span class="title">Founding Member & Social Media Lead — Simbha Kunj Foundation (NGO)</span>
+        <span class="date">Feb 2021 – Present</span>
+      </div>
+      <div class="exp-desc">Co-founded animal welfare + student support NGO. Led social media strategy and community outreach.</div>
+    </div>
+    <div class="exp-item">
+      <div class="row">
+        <span class="title">Social & Outreach Head — YouTube Channel</span>
+        <span class="date">Oct 2025 – Present</span>
+      </div>
+      <div class="exp-desc">Audience growth strategy, content positioning, improved viewer engagement and channel reach.</div>
+    </div>
+    <div class="exp-item">
+      <div class="row">
+        <span class="title">Independent Business — E-Commerce & Dropshipping</span>
+        <span class="date">2024 – 2025</span>
+      </div>
+      <div class="exp-desc">Product sourcing, digital marketing funnels, customer acquisition; data-driven sales performance analysis.</div>
+    </div>
+  </div>
+
+  <!-- TWO COL: ACHIEVEMENTS + INTERESTS -->
+  <div class="two-col">
+    <div class="section">
+      <div class="section-title">Achievements</div>
+      <ul class="ach-list">
+        <li>Qualified JEE Mains 2024 &amp; 2025</li>
+        <li>Appeared for JEE Advanced 2024 &amp; 2025</li>
+        <li>SOF Olympiads (Class 11) — English: Intl. Rank 240 · Science: 1084 · Maths: 3872</li>
+        <li>RC Plane — design, assembly &amp; flight testing</li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="section-title">Interests</div>
+      <ul class="ach-list">
+        <li>Web3 &amp; DeFi · Solana · Ethereum · Smart Contracts</li>
+        <li>Full-Stack Dev · REST API Design · DevOps</li>
+        <li>Computer Vision · Embedded Systems</li>
+        <li>AI &amp; LLMs · Open Source</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    Akshansh Yadav · Expediator Inc. · © 2026 · expediator.github.io/resume · github.com/expediator
+  </div>
+
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">⬇ Save as PDF (Print → Save as PDF)</button>
+
+</body>
+</html>
