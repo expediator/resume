@@ -83,6 +83,16 @@
   /* ── Experience ── */
   .exp-desc { font-size: 9pt; color: var(--muted); margin-top: 2px; }
 
+  /* ── Startups ── */
+  .startup-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-top: 4px; }
+  .startup-table th { text-align: left; padding: 4px 8px; background: var(--accent-light); color: var(--accent); font-weight: 700; border-bottom: 1px solid var(--border); }
+  .startup-table td { padding: 4px 8px; color: var(--muted); border-bottom: 1px solid var(--border); }
+  .startup-table td:first-child { font-weight: 600; color: var(--text); }
+  .startup-table .badge { display: inline-block; padding: 0 5px; border-radius: 3px; font-size: 7.5pt; }
+  .startup-table .badge-live { background: #dcfce7; color: #166534; }
+  .startup-table .badge-demo { background: #dbeafe; color: #1e40af; }
+  .startup-table .empty td { text-align: center; font-style: italic; color: #9ca3af; }
+
   /* ── Achievements ── */
   .ach-list { list-style: none; }
   .ach-list li { font-size: 9pt; color: var(--muted); padding-left: 14px; position: relative; margin-bottom: 3px; }
@@ -216,7 +226,7 @@
       <div class="proj-header">
         <span class="proj-name">SwapX — CEX + DEX Crypto Exchange</span>
         <span class="proj-links">
-          <a href="https://easygoing-motivation-production.up.railway.app">Live →</a>&nbsp;&nbsp;
+          <a href="https://swapx-dex.vercel.app">Live →</a>&nbsp;&nbsp;
           <a href="https://github.com/expediator/swapx-dex">GitHub →</a>
         </span>
       </div>
@@ -264,10 +274,65 @@
           <a href="https://github.com/expediator/civil-site">GitHub →</a>
         </span>
       </div>
-      <div class="proj-stack">Next.js 14 · TypeScript · Tailwind CSS · Web3Forms · Vercel · 2026</div>
+      <div class="proj-stack">Next.js 14 · TypeScript · Tailwind CSS · Resend Email · Google Calendar · Vercel · 2026</div>
       <ul class="proj-desc">
-        <li>Professional consultancy site — 10 sections, pricing packages, Web3Forms contact, WhatsApp button, SEO meta tags</li>
+        <li>Professional consultancy site — 10 sections, pricing packages, Resend contact emails, Google Calendar booking, WhatsApp CTA, SEO</li>
       </ul>
+    </div>
+  </div>
+
+  <!-- STARTUPS -->
+  <div class="section">
+    <div class="section-title">Startups</div>
+
+    <div style="margin-bottom:8px;">
+      <div style="font-size:8.5pt;font-weight:700;color:var(--text);margin-bottom:3px;">Self-Deployed</div>
+      <table class="startup-table">
+        <thead>
+          <tr>
+            <th style="width:28%">Product</th>
+            <th style="width:22%">Role</th>
+            <th style="width:30%">Stack</th>
+            <th style="width:10%">Stage</th>
+            <th style="width:10%">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CareerVerse AI</td>
+            <td>Founder &amp; Full-Stack Dev</td>
+            <td>Next.js 16 · Groq AI · PostgreSQL · Resend</td>
+            <td><span class="badge badge-live">Live</span></td>
+            <td><a href="https://careerverse-ai-sigma.vercel.app" style="color:var(--accent)">→</a></td>
+          </tr>
+          <tr>
+            <td>SwapX DEX</td>
+            <td>Founder &amp; Full-Stack Dev</td>
+            <td>Next.js 14 · Upstash Redis · NextAuth v4</td>
+            <td><span class="badge badge-demo">Demo</span></td>
+            <td><a href="https://swapx-dex.vercel.app" style="color:var(--accent)">→</a></td>
+          </tr>
+          <tr>
+            <td>Plinth Civil Consultancy</td>
+            <td>Founder &amp; Dev</td>
+            <td>Next.js 14 · Resend Email · Tailwind CSS</td>
+            <td><span class="badge badge-live">Live</span></td>
+            <td><a href="https://civil-site-gray.vercel.app" style="color:var(--accent)">→</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <div style="font-size:8.5pt;font-weight:700;color:var(--text);margin-bottom:3px;">Worked For</div>
+      <table class="startup-table">
+        <thead>
+          <tr><th>Company</th><th>Role</th><th>Duration</th><th>Impact</th></tr>
+        </thead>
+        <tbody class="empty">
+          <tr><td colspan="4">Actively seeking early-stage startup opportunities to contribute.</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
